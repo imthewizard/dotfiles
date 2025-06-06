@@ -48,8 +48,6 @@ vim.lsp.enable("tsserver")
 ----------------------------------------------------
 --                    Settings                    --
 ----------------------------------------------------
-vim.api.nvim_exec('language en', true)
-
 -- Splitting
 opt.splitbelow = true
 opt.splitright = true
