@@ -9,8 +9,10 @@ mkcd()
 # Aliases
 if [ -x "$(command -v lsd)" ]; then
 	alias ls="lsd -a --group-directories-first"
+	alias ll="lsd -al --group-directories-first"
 else
-	alias ls="ls -al --group-directories-first"
+	alias ls="ls -a --group-directories-first"
+	alias ll="ls -al --group-directories-first"
 fi
 ##########
 
