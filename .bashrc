@@ -7,8 +7,6 @@ mkcd()
 ##########
 
 # Aliases
-alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
-
 if [ -x "$(command -v lsd)" ]; then
 	alias ls="lsd -a"
 else
