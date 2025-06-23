@@ -1,0 +1,17 @@
+separator_block_width=25
+
+[cpu]
+command=$SCRIPT_DIR/cpu.sh
+interval=5
+
+[memory]
+command=$SCRIPT_DIR/memory.sh
+interval=5
+
+[time]
+command=date +"%H:%M"
+interval=10
+
+[date]
+command=date +"%Y/%m/%d"
+interval=60
