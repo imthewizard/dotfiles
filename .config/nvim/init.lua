@@ -1,4 +1,3 @@
-local keymap = vim.api.nvim_set_keymap
 local g = vim.g
 local opt = vim.opt
 
@@ -75,15 +74,17 @@ end
 ----------------------------------------------------
 --                    Keymaps                     --
 ----------------------------------------------------
-require("myfunctions/moveorsplit")
+local keymap = vim.keymap.set
 
 local shh_nore = {noremap = true, silent = true}
 
 -- Moving around splits and splitting with the same key
-keymap("n", "<c-h>", ":lua moveOrSplit('h')<CR>", shh_nore)
-keymap("n", "<c-j>", ":lua moveOrSplit('j')<CR>", shh_nore)
-keymap("n", "<c-k>", ":lua moveOrSplit('k')<CR>", shh_nore)
-keymap("n", "<c-l>", ":lua moveOrSplit('l')<CR>", shh_nore)
+local split_integration = require("myfunctions/moveorsplit")
+split_integration.setup()
+keymap("n", "<c-h>", split_integration.move_or_split_left)
+keymap("n", "<c-j>", split_integration.move_or_split_down)
+keymap("n", "<c-k>", split_integration.move_or_split_up)
+keymap("n", "<c-l>", split_integration.move_or_split_right)
 
 -- Remove search highlighting with esc
 keymap("n", "<ESC>", ":noh<CR>", shh_nore)
