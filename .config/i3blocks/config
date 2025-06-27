@@ -2,7 +2,7 @@ separator_block_width=25
 
 [cpu]
 command=$SCRIPT_DIR/cpu.sh
-interval=5
+interval=persist
 
 [memory]
 command=$SCRIPT_DIR/memory.sh
