@@ -126,5 +126,6 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
+		font pango:monospace 10
         status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
 }
