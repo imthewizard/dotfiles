@@ -113,7 +113,7 @@ function module.setup()
 	end
 end
 
-function module.move_or_split_left()
+function module.move_left()
 	local direction = {left = true}
 
 	if has_window_direction(direction) then
@@ -132,7 +132,7 @@ function module.move_or_split_left()
 	end
 end
 
-function module.move_or_split_down()
+function module.move_down()
 	local direction = {down = true}
 
 	if has_window_direction(direction) then
@@ -151,7 +151,7 @@ function module.move_or_split_down()
 	end
 end
 
-function module.move_or_split_up()
+function module.move_up()
 	local direction = {up = true}
 
 	if has_window_direction(direction) then
@@ -170,7 +170,7 @@ function module.move_or_split_up()
 	end
 end
 
-function module.move_or_split_right()
+function module.move_right()
 	local direction = {right = true}
 
 	if has_window_direction(direction) then

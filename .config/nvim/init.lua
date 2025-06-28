@@ -78,13 +78,16 @@ local keymap = vim.keymap.set
 
 local shh_nore = {noremap = true, silent = true}
 
--- Moving around splits and splitting with the same key
+-- Split integration with wezterm using the same key
 local split_integration = require("myfunctions/moveorsplit")
 split_integration.setup()
-keymap("n", "<c-h>", split_integration.move_or_split_left)
-keymap("n", "<c-j>", split_integration.move_or_split_down)
-keymap("n", "<c-k>", split_integration.move_or_split_up)
-keymap("n", "<c-l>", split_integration.move_or_split_right)
+keymap("n", "<c-h>", split_integration.move_left)
+keymap("n", "<c-j>", split_integration.move_down)
+keymap("n", "<c-k>", split_integration.move_up)
+keymap("n", "<c-l>", split_integration.move_right)
+
+keymap("n", "<c-w>j", ":split<CR>", shh_nore)
+keymap("n", "<c-w>l", ":vsplit<CR>", shh_nore)
 
 -- Remove search highlighting with esc
 keymap("n", "<ESC>", ":noh<CR>", shh_nore)
