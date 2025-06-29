@@ -24,6 +24,7 @@ config.keys = {
 	{key = 'j', mods = 'CTRL', action = wezterm.action_callback(function(window, pane) splitIntegration.MoveOrSplit(window, pane, 'j') end)},
 	{key = 'k', mods = 'CTRL', action = wezterm.action_callback(function(window, pane) splitIntegration.MoveOrSplit(window, pane, 'k') end)},
 	{key = 'l', mods = 'CTRL', action = wezterm.action_callback(function(window, pane) splitIntegration.MoveOrSplit(window, pane, 'l') end)},
+	{key = 'q', mods = 'CTRL', action = wezterm.action.CloseCurrentPane({confirm = true})},
 
 	{key = 'h', mods = 'CTRL|SHIFT', action = wezterm.action_callback(function(window, pane) splitIntegration.Resize(window, pane, 'h') end)},
 	{key = 'j', mods = 'CTRL|SHIFT', action = wezterm.action_callback(function(window, pane) splitIntegration.Resize(window, pane, 'j') end)},
