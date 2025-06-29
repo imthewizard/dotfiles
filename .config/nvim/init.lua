@@ -5,10 +5,6 @@ opt.termguicolors = true
 g.mapleader = " "
 g.maplocalleader = " "
 
--- fix for some weird bugs in windows when trying to use commands while running neovim in git bash
-opt.shellcmdflag = "-c"
-opt.shellxquote = ""
-
 ----------------------------------------------------
 --                      Lazy                      --
 ----------------------------------------------------
@@ -62,11 +58,6 @@ opt.relativenumber = true
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.shiftwidth = 4
-
-if vim.g.neovide then -- for Neovide
-	vim.g.neovide_cursor_animation_length = 0 -- disable cursor anim
-	vim.o.guifont = "Iosevka Nerd Font Mono:h12"
-end
 ----------------------------------------------------
 ----------------------------------------------------
 
