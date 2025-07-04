@@ -1,6 +1,7 @@
 local module = {}
 
 local wezterm = require("myfunctions/split-integration/wezterm")
+local tmux = require("myfunctions/split-integration/tmux")
 
 ---@type Terminal | nil
 module.terminal = nil
@@ -16,27 +17,9 @@ local function process_running(process)
 			-- success
 			return true
 		end
+	else
+		error("Requires pgrep")
 	end
-
-	return false
-end
-
----@param direction Direction
----@return boolean # If there is a window to the specified direction
-local function has_window_direction(direction)
-	local current_window = vim.fn.winnr()
-
-	local other_window
-	if direction.left then
-		other_window = vim.fn.winnr('h')
-	elseif direction.right then
-		other_window = vim.fn.winnr('l')
-	elseif direction.down then
-		other_window = vim.fn.winnr('j')
-	elseif direction.up then
-		other_window = vim.fn.winnr('k')
-	end
-	if current_window ~= other_window then return true end
 
 	return false
 end
@@ -55,6 +38,20 @@ local function direction_to_vim_key(direction)
 	end
 end
 
+---@param direction Direction
+---@return boolean # If there is a window to the specified direction
+local function has_window_direction(direction)
+	local current_window = vim.fn.winnr()
+
+	local other_window = vim.fn.winnr(direction_to_vim_key(direction))
+
+	--return current_window == other_window
+	if current_window ~= other_window then return true end
+
+	return false
+end
+
+-- Moves to the desired location, which can include the environment outside neovim (ex. wezterm splits)
 local function move(direction)
 	local window_number = vim.fn.winnr(direction_to_vim_key(direction))
 
@@ -70,6 +67,12 @@ local function move(direction)
 			end
 			-- Switch to the pane in that direction
 			wezterm.activate_pane(direction)
+		elseif module.terminal == "tmux" then
+			if tmux.has_pane_direction(direction) == false then
+				tmux.split(direction) -- tmux automatically activates the new pane after splitting
+			else
+				tmux.activate_pane(direction)
+			end
 		end
 	end
 end
@@ -77,6 +80,9 @@ end
 function module.setup()
 	if process_running("wezterm") then
 		module.terminal = "wezterm"
+	elseif process_running("tmux") then
+		print("on tmux")
+		module.terminal = "tmux"
 	end
 end
 
