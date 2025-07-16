@@ -70,7 +70,7 @@ local keymap = vim.keymap.set
 local shh_nore = {noremap = true, silent = true}
 
 -- Split integration with wezterm using the same key
-local split_integration = require("myfunctions/split-integration/si")
+local split_integration = require("utils/split-integration/si")
 split_integration.setup()
 keymap("n", "<c-h>", split_integration.move_left)
 keymap("n", "<c-j>", split_integration.move_down)

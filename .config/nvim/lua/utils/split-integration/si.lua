@@ -1,7 +1,7 @@
 local module = {}
 
-local wezterm = require("myfunctions/split-integration/wezterm")
-local tmux = require("myfunctions/split-integration/tmux")
+local wezterm = require("utils/split-integration/wezterm")
+local tmux = require("utils/split-integration/tmux")
 
 ---@type Terminal | nil
 module.terminal = nil
