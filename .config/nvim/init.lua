@@ -25,7 +25,8 @@ require("lazy").setup("plugins")
 ----------------------------------------------------
 ----------------------------------------------------
 
-vim.cmd("colorscheme kanagawa-dragon")
+--vim.cmd("colorscheme kanagawa-dragon")
+vim.cmd("colorscheme grounds")
 
 ----------------------------------------------------
 --                      LSP                       --
