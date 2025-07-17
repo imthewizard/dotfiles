@@ -59,6 +59,13 @@ opt.relativenumber = true
 opt.tabstop = 4
 opt.softtabstop = 4
 opt.shiftwidth = 4
+
+-- Fasm filetype. For some reason neovim wasn't recognizing it even though a syntax exists for it.
+vim.filetype.add({
+	extension = {
+		fasm = "fasm"
+	}
+})
 ----------------------------------------------------
 ----------------------------------------------------
 
