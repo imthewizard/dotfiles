@@ -16,13 +16,14 @@ local colors = {
 	red2 = hsl(0, 80, 60),
 	green = hsl(120, 80, 30),
 	green2 = hsl(130, 80, 60),
+	green3 = hsl(130, 80, 80),
 	blue = hsl(220, 80, 60),
 	blue2 = hsl(220, 80, 70),
 
 	yellow = hsl(55, 90, 50),
 	yellow2 = hsl(55, 90, 65),
-	cyan = hsl(180, 80, 70),
-	cyan2 = hsl(180, 80, 50),
+	cyan = hsl(180, 80, 50),
+	cyan2 = hsl(180, 80, 70),
 	purple = hsl(275, 80, 70),
 	pink = hsl(300, 85, 70),
 }
@@ -37,10 +38,12 @@ local highlights = {
 
 	String = {fg = colors.green2},
 	Character = {fg = colors.green},
-	Number = {fg = colors.blue},
+	Number = {fg = colors.blue2},
 	Float = {fg = colors.blue2},
 	Boolean = {fg = colors.yellow},
 
+	Operator = {fg = colors.green3},
+	Special = {fg = colors.cyan},
 	Identifier = {fg = colors.white},
 	Type = {fg = colors.purple},
 
@@ -48,6 +51,11 @@ local highlights = {
 	Statement = {fg = colors.red2},
 
 	Error = {fg = colors.red},
+
+	-- Tree Sitter
+	["@constant"] = {link = "Constant"},
+	["@variable"] = {fg = colors.white},
+	["@type.builtin"] = {fg = colors.purple},
 }
 
 for group, opts in pairs(highlights) do
