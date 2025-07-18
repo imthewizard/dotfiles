@@ -22,6 +22,7 @@ local colors = {
 
 	yellow = hsl(55, 90, 50),
 	yellow2 = hsl(55, 90, 65),
+	orange = hsl(30, 80, 60),
 	cyan = hsl(180, 80, 50),
 	cyan2 = hsl(180, 80, 70),
 	purple = hsl(275, 80, 70),
@@ -56,6 +57,11 @@ local highlights = {
 	["@constant"] = {link = "Constant"},
 	["@variable"] = {fg = colors.white},
 	["@type.builtin"] = {fg = colors.purple},
+
+	-- Plugin-specific
+	MiniHipatternsTodo = {bg = colors.green2, fg = colors.grey},
+	MiniHipatternsHack = {bg = colors.orange, fg = colors.grey},
+	MiniHipatternsFixme = {bg = colors.red2, fg = colors.grey},
 }
 
 for group, opts in pairs(highlights) do

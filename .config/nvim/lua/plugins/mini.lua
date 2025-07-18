@@ -6,6 +6,10 @@ return {
 		local hipatterns = require("mini.hipatterns")
 		hipatterns.setup({
 			highlighters = {
+				todo = {pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo"},
+				hack = {pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack"},
+				fixme = {pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme"},
+
 				hex_color = hipatterns.gen_highlighter.hex_color(),
 				hsl_color = {
 					pattern = "hsl%(%d+, %d+%%?, %d+%%?%)",
