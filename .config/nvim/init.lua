@@ -44,6 +44,9 @@ vim.lsp.enable("luals")
 ----------------------------------------------------
 --                    Settings                    --
 ----------------------------------------------------
+-- Status Column
+vim.o.statuscolumn = "%!v:lua.require('status/statuscolumn').statuscolumn()"
+
 -- Colorscheme
 vim.cmd("colorscheme grounds")
 

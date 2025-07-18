@@ -58,10 +58,17 @@ local highlights = {
 	["@variable"] = {fg = colors.white},
 	["@type.builtin"] = {fg = colors.purple},
 
+	-- LSP
+	DiagnosticError = {bg = colors.red2, fg = colors.grey},
+	DiagnosticWarn= {bg = colors.orange, fg = colors.grey},
+
 	-- Plugin-specific
 	MiniHipatternsTodo = {bg = colors.green2, fg = colors.grey},
 	MiniHipatternsHack = {bg = colors.orange, fg = colors.grey},
 	MiniHipatternsFixme = {bg = colors.red2, fg = colors.grey},
+
+	-- My config
+	SelectedLineNr = {fg = colors.yellow2, bold = true, italic = true},
 }
 
 for group, opts in pairs(highlights) do
