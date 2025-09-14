@@ -67,6 +67,8 @@ local highlights = {
 	MiniHipatternsHack = {bg = colors.orange, fg = colors.grey},
 	MiniHipatternsFixme = {bg = colors.red2, fg = colors.grey},
 
+	MiniTrailspace = {bg = colors.red2, fg = colors.grey},
+
 	-- My config
 	SelectedLineNr = {fg = colors.yellow2, bold = true, italic = true},
 }

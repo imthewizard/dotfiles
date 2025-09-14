@@ -1,5 +1,5 @@
 return {
-	"echasnovski/mini.nvim",
+	"nvim-mini/mini.nvim",
 	version = false,
 
 	config = function()
@@ -41,5 +41,6 @@ return {
 		})
 		require("mini.ai").setup()
 		require("mini.icons").setup()
+		require("mini.trailspace").setup()
 	end
 }
