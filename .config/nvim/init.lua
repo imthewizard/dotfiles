@@ -100,5 +100,10 @@ keymap("n", "<ESC>", ":noh<CR>", shh_nore)
 
 -- LSP Pretty Hover
 keymap("n", "K", ":lua require('pretty_hover').hover()<CR>", shh_nore)
+
+-- Remap CTRL-c to Esc + JJ to escape insert mode
+-- Might remove one of these in the future
+keymap("i", "<c-c>", "<Esc>", shh_nore)
+keymap("i", "jj", "<Esc>", shh_nore)
 ----------------------------------------------------
 ----------------------------------------------------
