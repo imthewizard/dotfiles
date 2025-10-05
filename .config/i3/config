@@ -1,17 +1,8 @@
 # Alt as mod key
-
 set $mod Mod1
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
+# Font
 font pango:monospace 12
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# move tiling windows via drag & drop by left-clicking into the title bar,
-# or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -35,10 +26,10 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
-bindsym $mod+c split c
+bindsym $mod+c split horizontal
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+v split vertical
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -49,7 +40,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+m floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -112,10 +103,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 1 px or 1 ppt
+        bindsym j resize grow height 1 px or 1 ppt
+        bindsym k resize shrink height 1 px or 1 ppt
+        bindsym l resize grow width 1 px or 1 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -129,5 +120,7 @@ bar {
 		font pango:monospace 10
         status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
 }
+
+exec_always "setxkbmap -layout br"
 
 gaps inner 5

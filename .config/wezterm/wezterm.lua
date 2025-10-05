@@ -8,6 +8,7 @@ config:set_strict_mode(true)
 
 
 --[[ Initial Config ]]--
+config.term = "wezterm"
 
 config.font = wezterm.font("IosevkaTerm Nerd Font Mono")
 config.font_size = 10
