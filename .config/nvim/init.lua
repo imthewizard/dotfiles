@@ -37,6 +37,7 @@ vim.lsp.enable("cssls")
 vim.lsp.enable("html")
 vim.lsp.enable("tsserver")
 vim.lsp.enable("luals")
+vim.lsp.enable("zls")
 ----------------------------------------------------
 ----------------------------------------------------
 
