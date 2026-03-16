@@ -16,10 +16,10 @@ return {
 	},
 
 	keys = {
-		{ "<leader>pf", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
-		{ "<leader>pb", function() Snacks.picker.buffers() end, desc = "Buffers" },
-		{ "<leader>pg", function() Snacks.picker.grep() end, desc = "Grep" },
+		{ "<leader>pf", function() Snacks.picker.smart({filter={cwd = true}}) end, desc = "Smart Find Files" },
+		{ "<leader>pb", function() Snacks.picker.buffers({filter={cwd = true}}) end, desc = "Buffers" },
+		{ "<leader>pg", function() Snacks.picker.grep({filter={cwd = true}}) end, desc = "Grep" },
 
-		{ "<leader>sh", function() Snacks.image.hover() end, desc = "Snacks Image Hover" },
+		{ "<leader>sh", function() Snacks.image.hover({filter={cwd = true}}) end, desc = "Snacks Image Hover" },
 	},
 }
