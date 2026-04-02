@@ -8,15 +8,14 @@ g.maplocalleader = " "
 ----------------------------------------------------
 --                      LSP                       --
 ----------------------------------------------------
---vim.lsp.set_log_level("off")
+-- The log file starts getting big quite fast, only turn it on when needed
+vim.lsp.log.set_level("off")
 
--- enabling
-vim.lsp.enable("clangd")
-vim.lsp.enable("cssls")
-vim.lsp.enable("html")
-vim.lsp.enable("tsserver")
-vim.lsp.enable("luals")
-vim.lsp.enable("zls")
+-- Enable all lsps that have a configuration in .config/nvim/lsp
+for name, _ in vim.fs.dir(vim.fn.stdpath("config") .. "/lsp") do
+	local name_without_extension = vim.fn.fnamemodify(name, ":r")
+	vim.lsp.enable(name_without_extension)
+end
 ----------------------------------------------------
 ----------------------------------------------------
 
